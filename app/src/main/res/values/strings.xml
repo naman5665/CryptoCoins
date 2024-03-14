@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">UpstoxApplication</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="page_title">Coins</string>
+    <string name="chip_txt_active_coins">Active Coins</string>
+    <string name="chip_txt_inactive_coins">Inactive Coins</string>
+    <string name="chip_txt_only_tokens">Only Tokens</string>
+    <string name="chip_txt_only_coins">Only Coins</string>
+    <string name="chip_txt_new_coins">New Coins</string>
+</resources>
