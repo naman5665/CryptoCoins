@@ -44,6 +44,7 @@ class CryptocoinsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
         progressDialog = ProgressDialog(context)
         progressDialog.setTitle("Loading")
         progressDialog.setMessage("Please wait.....")
@@ -57,10 +58,14 @@ class CryptocoinsFragment : Fragment() {
         binding.myToolbar.inflateMenu(R.menu.top_app_bar_menu)
         super.onCreateOptionsMenu(menu, inflater)
 
-        val searchViewItem = menu.findItem(R.menu.top_app_bar_menu)
+        val searchViewItem = menu.findItem(R.id.search_item)
         if(searchViewItem != null){
             val searchView = searchViewItem.actionView as SearchView
-            searchView.imeOptions = EditorInfo.IME_ACTION_DONE
+            searchView.queryHint = "Search Coins"
+            searchView.isFocusable = true
+            searchView.setQuery("",false)
+            searchView.isIconified = true
+            searchView.maxWidth = androidx.constraintlayout.widget.R.attr.maxWidth
 
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
 
@@ -74,11 +79,16 @@ class CryptocoinsFragment : Fragment() {
                 }
             })
         }
+
+//        val item_search: MenuItem = binding.myToolbar.menu.findItem(R.id.search_item)
+//        val searchView = item_search.actionView as SearchView
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.search_item -> {
+                Toast.makeText(context,"Clicked",Toast.LENGTH_SHORT).show()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -111,7 +121,7 @@ class CryptocoinsFragment : Fragment() {
         cryptoAdapter = CryptoCoinsAdapter(context, arrayListOf())
         binding.cryptoCoinsRv.adapter = cryptoAdapter
         (activity as? AppCompatActivity)?.setSupportActionBar(binding.myToolbar)
-        (activity as? AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+//        (activity as? AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         cryptoViewModel.cryptocurrencies.observe(viewLifecycleOwner,Observer{ cryptocurrencies ->
             cryptocurrencies?.let {
