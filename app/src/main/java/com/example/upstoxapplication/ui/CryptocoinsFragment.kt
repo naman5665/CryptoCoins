@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.widget.ProgressBar
 import android.widget.Toast
 import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
@@ -39,16 +40,18 @@ class CryptocoinsFragment : Fragment() {
     var listFromService: List<Cryptocurrencies> = listOf()
     var filteredListToShow: MutableList<Cryptocurrencies> = mutableListOf()
     lateinit var progressDialog: ProgressDialog
+    lateinit var progressBar: ProgressBar
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-        progressDialog = ProgressDialog(context)
-        progressDialog.setTitle("Loading")
-        progressDialog.setMessage("Please wait.....")
-        progressDialog.setCancelable(false)
+        progressBar = ProgressBar(context)
+//        progressDialog = ProgressDialog(context)
+//        progressDialog.setTitle("Loading")
+//        progressDialog.setMessage("Please wait.....")
+//        progressDialog.setCancelable(false)
         cryptoViewModel = ViewModelProvider(this)[CryptoCurrencyViewModel::class.java]
         cryptoViewModel.fetchCryptocurrencies()
     }
@@ -135,9 +138,11 @@ class CryptocoinsFragment : Fragment() {
         })
         cryptoViewModel.isLoading.observe(viewLifecycleOwner,Observer{isLoading ->
             if(isLoading){
-                progressDialog.show()
+//                progressDialog.show()
+//                binding.progressbar.visibility = View.VISIBLE
             }else{
-                progressDialog.hide()
+                binding.progressbar.visibility = View.GONE
+//                progressDialog.hide()
             }
 
         })
