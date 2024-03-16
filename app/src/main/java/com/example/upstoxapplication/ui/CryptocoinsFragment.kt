@@ -116,7 +116,6 @@ class CryptocoinsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentCryptocoinsBinding.bind(view)
-        val list = createListToShowData()
         binding.cryptoCoinsRv.layoutManager = LinearLayoutManager(context)
         cryptoAdapter = CryptoCoinsAdapter(context, arrayListOf())
         binding.cryptoCoinsRv.adapter = cryptoAdapter
