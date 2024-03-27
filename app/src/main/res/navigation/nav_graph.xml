@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginScreenFragment">
+
+    <fragment
+        android:id="@+id/loginScreenFragment"
+        android:name="com.example.upstoxapplication.ui.LoginScreen.LoginScreenFragment"
+        android:label="LoginScreenFragment" >
+        <action
+            android:id="@+id/action_loginScreenFragment_to_cryptocoinsFragment"
+            app:destination="@id/cryptocoinsFragment"
+            app:popUpTo="@id/loginScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cryptocoinsFragment"
+        android:name="com.example.upstoxapplication.ui.CryptocoinsFragment"
+        android:label="CryptocoinsFragment" />
+</navigation>
