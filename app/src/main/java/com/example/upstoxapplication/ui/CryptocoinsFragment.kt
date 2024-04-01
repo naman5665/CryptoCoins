@@ -2,7 +2,6 @@ package com.example.upstoxapplication.ui
 
 import android.app.ProgressDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -12,11 +11,9 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.ProgressBar
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import androidx.compose.ui.text.toLowerCase
-import androidx.core.view.MenuItemCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -261,25 +258,18 @@ class CryptocoinsFragment : Fragment() {
 
     private fun createListToShowData(): List<Cryptocurrencies>{
         return listOf(
-            Cryptocurrencies("Bitcoin", "BTC", false, false, "meType"),
-            Cryptocurrencies("Citcoin", "CTC", false, true, "meType"),
-            Cryptocurrencies("Naman", "NAM", false, false, "meType"),
-            Cryptocurrencies("UpStox", "UPX", false, true, "meType"),
-            Cryptocurrencies("Etherium", "ETH", false, false, "meType"),
-            Cryptocurrencies("NOWay", "NW", false, true, "meType"),
-            Cryptocurrencies("MyWay", "MW", false, false, "meType"),
-            Cryptocurrencies("YourWay", "YW", false, true, "meType"),
-            Cryptocurrencies("OwnWay", "OW", false, false, "meType"),
-            Cryptocurrencies("OwnWay", "OW", false, true, "meType"),
-            Cryptocurrencies("OwnWay", "OW", false, false, "meType"),
-            Cryptocurrencies("OwnWay", "OW", false, false, "meType"),
-            Cryptocurrencies("OwnWay", "OW", false, false, "meType"),
-            Cryptocurrencies("OwnWay", "OW", false, false, "meType"),
-            Cryptocurrencies("OwnWay", "OW", false, true, "meType"),
-            Cryptocurrencies("OwnWay", "OW", false, true, "meType"),
-            Cryptocurrencies("OwnWay", "OW", false, true, "meType"),
-            Cryptocurrencies("OwnWay", "OW", false, true, "meType"),
-            Cryptocurrencies("OwnWay", "OW", false, true, "meType")
+            Cryptocurrencies("Bitcoin", "BTC", false, false, "token"),
+            Cryptocurrencies("Citcoin", "CTC", true, true, "coin"),
+            Cryptocurrencies("Tether", "USDT", true, false, "coin"),
+            Cryptocurrencies("USD Coin ", "USDC", false, true, "coin"),
+            Cryptocurrencies("BNB", "BNB", false, false, "token"),
+            Cryptocurrencies("Cardano", "ADA", false, true, "token"),
+            Cryptocurrencies("Solana", "SOL", true, false, "coin"),
+            Cryptocurrencies("Dogecoin", "DOGE", false, true, "coin"),
+            Cryptocurrencies("Polkadot", "DOT", true, false, "token"),
+            Cryptocurrencies("Shiba Inu", "SHIB", false, true, "token"),
+            Cryptocurrencies("Avalanche", "AVAX", true, false, "coin"),
+            Cryptocurrencies("OwnWay", "OW", true, false, "token"),
         )
     }
 }
