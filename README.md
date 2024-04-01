@@ -20,12 +20,12 @@ https://drive.google.com/file/d/1S7E6Ns5KR5HBOpFq2rahQhPaRTXEor0D/view?usp=shari
 
 <h2><strong>Technical Details:</strong></h2>
 
-**UI/UX**:- The UI of this app is made using both Jetpack Compose and XML layout system. The login screen is made in compose and later in xml
+_UI/UX_:- The UI of this app is made using both Jetpack Compose and XML layout system. The login screen is made in compose and later in xml
 
-**Service**:- A demo API(https://run.mocky.io/v3/ac7d7699-a7f7-488b-9386-90d1a60c4a4b) was used to display the data in this app.Retrofit library was used to fetch and retreive the data from this API.
+_Service_ :- A demo API(https://run.mocky.io/v3/ac7d7699-a7f7-488b-9386-90d1a60c4a4b) was used to display the data in this app.Retrofit library was used to fetch and retreive the data from this API.
 
-**MVVM architecture was followed throught the app and usage of recyclerview and adapter is present to show the list of cryptocurrencies.**
+_MVVM architecture was followed throught the app and usage of recyclerview and adapter is present to show the list of cryptocurrencies_
 
-**Material3 library is used throught the app to make the app more user friendly and integrate with new trending designs.**
+_Material3 library is used throught the app to make the app more user friendly and integrate with new trending designs_
 
-Note: This app was made during an intial phase of assignment of Upstox Company
+<sub><sup>Note: This app was made during an intial phase of assignment of Upstox Company</sup></sub>
